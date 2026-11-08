@@ -1,0 +1,4 @@
+Un archivo de texto es una secuencia de caracteres almacenada en disco.
+El programa lo abre, lo recorre caracter por caracter y lo cierra.
+Mientras el flujo siga en buen estado, la lectura continua.
+Al llegar al final del archivo el flujo falla y el bucle termina.

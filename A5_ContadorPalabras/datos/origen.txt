@@ -1,0 +1,3 @@
+La lectura de un archivo con el operador de extraccion separa el texto
+en palabras usando los espacios en blanco como delimitadores.
+Cada salto de linea tambien cuenta como espacio.

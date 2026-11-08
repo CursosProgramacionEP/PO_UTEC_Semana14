@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.20)
+project(PO_UTEC_Semana14 LANGUAGES CXX)
+
+add_subdirectory(A1_ContadorVocales)
+add_subdirectory(A2_RegistroPersonas)
+add_subdirectory(A3_ListaOrdenada)
+add_subdirectory(A4_CAleatorio)
+add_subdirectory(A5_ContadorPalabras)
+add_subdirectory(B1_OrdenarGenerico)
+add_subdirectory(B2_InputGenerico)
+add_subdirectory(B3_RangoGenerico)
