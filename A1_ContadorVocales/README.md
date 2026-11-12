@@ -4,6 +4,30 @@
 
 Es el primer ejercicio con archivos: **uno se lee y otro se escribe** en el mismo programa.
 
+## Diagrama de funciones
+
+```mermaid
+classDiagram
+    class contador_vocales {
+        <<funciones>>
+        +TOTAL_VOCALES entero
+        +vocal_en(entero indice) caracter
+        +indice_de(caracter c) entero
+        +contar_vocales(string entrada, entero frecuencia) bool
+        +escribir_frecuencias(string salida, entero frecuencia) bool
+    }
+    class main {
+        <<programa>>
+        +main() int
+    }
+    main ..> contador_vocales : usa
+    note for contador_vocales "contar_vocales recorre el archivo de entrada y llena el arreglo.
+escribir_frecuencias solo vuelca ese arreglo: no lee nada.
+Las dos se apoyan en indice_de y vocal_en."
+```
+
+El ejercicio no tiene clases: son cuatro funciones libres declaradas en `contador_vocales.h`. Lo que importa del reparto es que **el archivo de entrada se recorre una sola vez**, dentro de `contar_vocales`. A partir de ahí el programa trabaja con los cinco contadores, y `escribir_frecuencias` nunca vuelve a abrir el texto original.
+
 ## Los dos flujos
 
 | Flujo | Clase | Cabecera | Para qué |

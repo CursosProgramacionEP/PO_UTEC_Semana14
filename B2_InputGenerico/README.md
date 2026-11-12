@@ -16,6 +16,26 @@
 
 En Python `input` siempre devuelve texto y hay que convertirlo (`int(...)`). En C++ se puede hacer mejor: **el tipo se pide en la llamada** y la función devuelve ya ese tipo.
 
+## Diagrama de la plantilla
+
+```mermaid
+classDiagram
+    class input {
+        <<template>>
+        +input~T~(string mensaje) T
+        +input~string~(string mensaje) string
+    }
+    class main {
+        <<programa>>
+        +main() int
+    }
+    main ..> input : usa
+    note for input "La version general lee con >> y sirve para cualquier tipo.
+La especializacion para string lee la linea completa con getline."
+```
+
+No hay clases: es una plantilla de función con una especialización. Las dos se llaman igual y el compilador elige según el tipo que se le pida en la llamada.
+
 ## La plantilla
 
 ```cpp

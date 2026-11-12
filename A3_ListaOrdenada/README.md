@@ -4,6 +4,28 @@
 
 El archivo de este ejercicio trae **su propia cabecera**: el primer número no es un dato, es cuántos datos vienen.
 
+## Diagrama de funciones
+
+```mermaid
+classDiagram
+    class lista_numeros {
+        <<funciones>>
+        +leer_lista(string archivo, vector~entero~ numeros) bool
+        +ordenar(vector~entero~ numeros) void
+        +mostrar(vector~entero~ numeros) void
+        +buscar(vector~entero~ numeros, entero valor) entero
+    }
+    class main {
+        <<programa>>
+        +main() int
+    }
+    main ..> lista_numeros : usa
+    note for lista_numeros "Solo leer_lista toca el archivo.
+Las otras tres trabajan sobre el vector que ella dejo cargado."
+```
+
+Cuatro funciones libres, y solo la primera abre un archivo. Ordenar, mostrar y buscar son operaciones sobre el `vector`: una vez cargado, el archivo ya no hace falta.
+
 ## El formato del archivo
 
 ```
